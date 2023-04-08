@@ -59,21 +59,23 @@ public class OhmsLawGui extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        titleJLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        ohmsLawJLabel = new javax.swing.JLabel();
+        ohmsLawFormulaJLabel = new javax.swing.JLabel();
+        vJLabel = new javax.swing.JLabel();
         voltsJTextField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        rJLabel = new javax.swing.JLabel();
         resistanceJTextField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        iJLabel = new javax.swing.JLabel();
+        ampeesJTextField = new javax.swing.JTextField();
+        amperesJLabel = new javax.swing.JLabel();
+        calculateJButton = new javax.swing.JButton();
+        clearJButton = new javax.swing.JButton();
+        printJButton = new javax.swing.JButton();
+        quitJButton = new javax.swing.JButton();
+        ohmsJLabel = new javax.swing.JLabel();
+        voltsJLabel = new javax.swing.JLabel();
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -153,12 +155,12 @@ public class OhmsLawGui extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(122, 248, 122));
         jPanel4.setForeground(new java.awt.Color(200, 55, 55));
 
-        titleJLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        titleJLabel.setText("Ohm's Law");
+        ohmsLawJLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ohmsLawJLabel.setText("Ohm's Law");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/OhmsFormula copy.jpg"))); // NOI18N
+        ohmsLawFormulaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/OhmsFormula copy.jpg"))); // NOI18N
 
-        jLabel3.setText("V:");
+        vJLabel.setText("V:");
 
         voltsJTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         voltsJTextField.setInheritsPopupMenu(true);
@@ -172,7 +174,7 @@ public class OhmsLawGui extends javax.swing.JFrame {
 
         jLabel9.setText("volts");
 
-        jLabel4.setText("R:");
+        rJLabel.setText("R:");
 
         resistanceJTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         resistanceJTextField.setSize(new java.awt.Dimension(64, 23));
@@ -184,46 +186,51 @@ public class OhmsLawGui extends javax.swing.JFrame {
 
         jLabel8.setText("ohms");
 
-        jLabel5.setText("I:");
+        iJLabel.setText("I:");
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField1.setSize(new java.awt.Dimension(64, 23));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        ampeesJTextField.setEditable(false);
+        ampeesJTextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        ampeesJTextField.setSize(new java.awt.Dimension(64, 23));
+        ampeesJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                ampeesJTextFieldActionPerformed(evt);
             }
         });
 
-        jLabel7.setText("ampees");
+        amperesJLabel.setText("ampees");
 
-        jButton1.setText("calculate");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        calculateJButton.setText("calculate");
+        calculateJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                calculateJButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("clear");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        clearJButton.setText("clear");
+        clearJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                clearJButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("print");
-        jButton3.setEnabled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        printJButton.setText("print");
+        printJButton.setEnabled(false);
+        printJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                printJButtonActionPerformed(evt);
             }
         });
 
-        jButton4.setText("quit");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        quitJButton.setText("quit");
+        quitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                quitJButtonActionPerformed(evt);
             }
         });
+
+        ohmsJLabel.setText("ohms");
+
+        voltsJLabel.setText("volts");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -234,9 +241,22 @@ public class OhmsLawGui extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(180, 180, 180)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(voltsJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(iJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rJLabel))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(resistanceJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ampeesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(vJLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(240, 240, 240)
+                                .addComponent(voltsJLabel)
+                                .addGap(97, 97, 97)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
@@ -244,35 +264,24 @@ public class OhmsLawGui extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                         .addGap(175, 175, 175)
                                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(voltsJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel4))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(resistanceJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel7))))
+                            .addComponent(amperesJLabel)
+                            .addComponent(ohmsJLabel)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(170, 170, 170)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(calculateJButton)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2))
+                                .addComponent(clearJButton))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(printJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton4))))
+                                .addComponent(quitJButton))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(170, 170, 170)
-                        .addComponent(titleJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ohmsLawJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ohmsLawFormulaJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -280,32 +289,38 @@ public class OhmsLawGui extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(titleJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(voltsJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                    .addComponent(ohmsLawFormulaJLabel)
+                    .addComponent(ohmsLawJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(vJLabel)
+                            .addComponent(voltsJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(voltsJLabel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(resistanceJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4)))
+                        .addComponent(rJLabel)
+                        .addComponent(ohmsJLabel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(iJLabel)
+                    .addComponent(ampeesJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(amperesJLabel))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calculateJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(clearJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(printJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(quitJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(86, 86, 86))
         );
 
@@ -350,11 +365,11 @@ public class OhmsLawGui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void ampeesJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ampeesJTextFieldActionPerformed
         // TODO add your handling code here:
         
         
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_ampeesJTextFieldActionPerformed
 
     
     /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -367,32 +382,32 @@ public class OhmsLawGui extends javax.swing.JFrame {
  * @author <i>Steven Halla</i>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void calculateJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateJButtonActionPerformed
         
         DecimalFormat twoDecimals = new DecimalFormat("#,##0.00");
         float volts, resistance, current;
         volts = Float.parseFloat(voltsJTextField.getText());
         resistance = Float.parseFloat(resistanceJTextField.getText());
         current = volts/resistance;
-        jTextField1.setText(twoDecimals.format(current));
-    }//GEN-LAST:event_jButton1ActionPerformed
+        ampeesJTextField.setText(twoDecimals.format(current));
+    }//GEN-LAST:event_calculateJButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void clearJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearJButtonActionPerformed
     
         voltsJTextField.setText("");
         resistanceJTextField.setText("");
-        jTextField1.setText("");
+        ampeesJTextField.setText("");
         voltsJTextField.requestFocus();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_clearJButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void quitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitJButtonActionPerformed
        
         System.exit(0);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_quitJButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void printJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printJButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_printJButtonActionPerformed
 
     private void resistanceJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resistanceJTextFieldActionPerformed
         // TODO add your handling code here:
@@ -440,18 +455,14 @@ public class OhmsLawGui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JTextField ampeesJTextField;
+    private javax.swing.JLabel amperesJLabel;
+    private javax.swing.JButton calculateJButton;
+    private javax.swing.JButton clearJButton;
+    private javax.swing.JLabel iJLabel;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -469,12 +480,18 @@ public class OhmsLawGui extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JLabel ohmsJLabel;
+    private javax.swing.JLabel ohmsLawFormulaJLabel;
+    private javax.swing.JLabel ohmsLawJLabel;
+    private javax.swing.JButton printJButton;
+    private javax.swing.JButton quitJButton;
+    private javax.swing.JLabel rJLabel;
     private javax.swing.JTextField resistanceJTextField;
-    private javax.swing.JLabel titleJLabel;
+    private javax.swing.JLabel vJLabel;
+    private javax.swing.JLabel voltsJLabel;
     private javax.swing.JTextField voltsJTextField;
     // End of variables declaration//GEN-END:variables
 }

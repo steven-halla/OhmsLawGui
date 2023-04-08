@@ -3,6 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package solutionlab1;
+/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ ~~~~~~~
+ * file: OhmsLawGui
+ * Description : An app that can calculate OHms Law
+ state.
+ * Date 4/7/2023
+ *
+ * @author <i>Steven Halla</i>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 import java.text.DecimalFormat;
 
@@ -346,6 +356,17 @@ public class OhmsLawGui extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    
+    /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ ~~~~~~~
+ * Method: OhmsLawGui
+ * Description : An app that can calculate OHms Law
+ state.
+ * Date 4/7/2023
+ *
+ * @author <i>Steven Halla</i>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         DecimalFormat twoDecimals = new DecimalFormat("#,##0.00");

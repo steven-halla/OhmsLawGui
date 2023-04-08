@@ -162,7 +162,7 @@ public class OhmsLawGui extends javax.swing.JFrame {
 
         vJLabel.setText("V:");
 
-        voltsJTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        voltsJTextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         voltsJTextField.setInheritsPopupMenu(true);
         voltsJTextField.setMinimumSize(new java.awt.Dimension(222, 22));
         voltsJTextField.setSize(new java.awt.Dimension(20, 20));
@@ -176,7 +176,7 @@ public class OhmsLawGui extends javax.swing.JFrame {
 
         rJLabel.setText("R:");
 
-        resistanceJTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        resistanceJTextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         resistanceJTextField.setSize(new java.awt.Dimension(64, 23));
         resistanceJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -374,8 +374,8 @@ public class OhmsLawGui extends javax.swing.JFrame {
     
     /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  ~~~~~~~
- * Method: OhmsLawGui
- * Description : An app that can calculate OHms Law
+ * Method: calculateJButtonActionPerformed
+ * Description : Calculates Ohms law , takes two input numbers ,for volts and ohms, and outputs the amperes
  state.
  * Date 4/7/2023
  *
@@ -392,6 +392,16 @@ public class OhmsLawGui extends javax.swing.JFrame {
         ampeesJTextField.setText(twoDecimals.format(current));
     }//GEN-LAST:event_calculateJButtonActionPerformed
 
+        /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ ~~~~~~~
+ * Method: clearJButtonActionPerformed
+ * Description : CLears the Cache for our 3 input tags
+ state.
+ * Date 4/7/2023
+ *
+ * @author <i>Steven Halla</i>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     private void clearJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearJButtonActionPerformed
     
         voltsJTextField.setText("");
@@ -399,7 +409,16 @@ public class OhmsLawGui extends javax.swing.JFrame {
         ampeesJTextField.setText("");
         voltsJTextField.requestFocus();
     }//GEN-LAST:event_clearJButtonActionPerformed
+            /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ ~~~~~~~
+ * Method: quitJButtonActionPerformed
+ * Description : exits out of the App
+ state.
+ * Date 4/7/2023
+ *
+ * @author <i>Steven Halla</i>
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     private void quitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitJButtonActionPerformed
        
         System.exit(0);
@@ -415,7 +434,7 @@ public class OhmsLawGui extends javax.swing.JFrame {
 
     private void voltsJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltsJTextFieldActionPerformed
         // TODO add your handling code here:
-       System.err.println(evt.toString());
+//       System.err.println(evt.toString());
 
     }//GEN-LAST:event_voltsJTextFieldActionPerformed
 
